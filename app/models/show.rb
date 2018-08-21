@@ -6,4 +6,8 @@ class Show < ActiveRecord::Base
     maximum(:rating)
   end
 
+  def self.most_popular_show
+    order(:rating).limit(1)[0]
+  end
+
 end
